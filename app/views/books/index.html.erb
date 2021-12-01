@@ -1,5 +1,9 @@
 <h1>Books<h1/>
 
 <% @books.each do |book| %>
-  <p><h3><%= author.name %></h3></p>
+  <p><h2><%= book.name %></h2></p>
+  <p><h4><%= book.author_id %></h4></p>
+  <p><h4><%= book.hardcover %></h4></p>
+  <p><h4>This book has <%= book.pages %> pages </h4></p>
+  <p><h4>This book's genre is <%= book.genre %></h4></p>
 <% end %>
