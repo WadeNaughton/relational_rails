@@ -8,7 +8,7 @@ describe Book do
     it { should validate_presence_of :name }
     it { should validate_presence_of :genre }
     it { should validate_presence_of :pages}
-    it { should validate_presence_of :hardcover}
-  
+    
+
   end
 end
