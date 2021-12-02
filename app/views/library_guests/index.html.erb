@@ -1,0 +1,5 @@
+<% @guests.each do |guest| %>
+  <p><h2><%=guest.name%></h2></p>
+  <p>age: <%=guest.age%></p>
+  <p>New guest? <%=guest.new%></p>
+<% end %>
