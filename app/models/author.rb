@@ -6,4 +6,8 @@ class Author < ApplicationRecord
     validates_presence_of :age
     validates :award_winning, inclusion: [true, false]
 
+  def self.order_by
+    Author.order(created_at: :desc)
+  end
+
 end
