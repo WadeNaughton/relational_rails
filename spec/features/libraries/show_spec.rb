@@ -11,4 +11,4 @@ describe 'the library show page' do
     expect(page).to have_content(@library1.max_capacity)
     expect(page).to have_content(@library1.id)
   end
-  end
+end 

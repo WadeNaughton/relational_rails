@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/guests', to: 'guests#index'
   get '/authors/:id', to: 'authors#show'
   get '/libraries/:id', to: 'libraries#show'
-
+  get '/guests/:id', to: 'guests#show'
 end
