@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2021_12_01_222235) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
-
   create_table "libraries", force: :cascade do |t|
     t.string "name"
     t.string "city"
@@ -43,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_12_01_222235) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "guests", force: :cascade do |t|
     t.string "name"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_12_01_222235) do
     t.datetime "updated_at", null: false
     t.index ["library_id"], name: "index_guests_on_library_id"
   end
-  
+
   add_foreign_key "books", "authors"
   add_foreign_key "guests", "libraries"
 end
