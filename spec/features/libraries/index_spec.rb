@@ -3,7 +3,7 @@ describe 'Libraries index page' do
   before do
     @library1 = Library.create!(name:"Denver Public Library", city: "Denver", open:true, max_capacity:500)
     @library2 = Library.create!(name:"Fort Collins Public Library", city: "Fort Collins", open:true, max_capacity:323)
-    visit '/libraries'
+    visit '/libraries/'
   end
 
   describe 'when I visit a libraries index page' do
