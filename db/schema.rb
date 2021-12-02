@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2021_12_01_222235) do
-
-ActiveRecord::Schema.define(version: 2021_12_01_221521) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "authors", force: :cascade do |t|
     t.boolean "award_winning"
@@ -39,17 +34,6 @@ ActiveRecord::Schema.define(version: 2021_12_01_221521) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
-  add_foreign_key "books", "authors"
-
-  create_table "guests", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.boolean "new"
-    t.bigint "library_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["library_id"], name: "index_guests_on_library_id"
-  end
 
   create_table "libraries", force: :cascade do |t|
     t.string "name"
@@ -60,6 +44,16 @@ ActiveRecord::Schema.define(version: 2021_12_01_221521) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "guests", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.boolean "new"
+    t.bigint "library_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["library_id"], name: "index_guests_on_library_id"
+  end
+  
+  add_foreign_key "books", "authors"
   add_foreign_key "guests", "libraries"
-
 end
