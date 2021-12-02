@@ -5,4 +5,8 @@ class Library < ApplicationRecord
   validates_presence_of :city
   validates_presence_of :max_capacity
   validates :open, inclusion: [true, false]
+
+  def self.order_by
+    Library.order(created_at: :desc)
+  end
 end

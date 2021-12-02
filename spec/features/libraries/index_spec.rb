@@ -10,6 +10,7 @@ describe 'Libraries index page' do
     it 'I see the name of each parent record in the system' do
       expect(page).to have_content(@library1.name)
       expect(page).to have_content(@library2.name)
+      expect(@library2.name).to appear_before(@library1.name)
     end
   end
 end
