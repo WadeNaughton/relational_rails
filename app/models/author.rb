@@ -10,4 +10,8 @@ class Author < ApplicationRecord
     Author.order(created_at: :desc)
   end
 
+  def count_books
+    Book.where(author_id: self.id).count
+  end
+
 end

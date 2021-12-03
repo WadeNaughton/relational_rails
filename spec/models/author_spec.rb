@@ -18,4 +18,15 @@ describe Author do
 
  end
 
+ it "counts number of books associated with author" do
+   author1 = Author.create!(award_winning:true, age:35, name:"Frank Herbert")
+   author2 = Author.create!(award_winning:false, age:30, name:"Wade Naughton")
+   book1 = author1.books.create!(hardcover:false, pages:300, name:"Dune", genre:"Science Fiction")
+   book2 = author2.books.create!(hardcover:false, pages:200, name:"Wade's Book", genre:"Fiction")
+   book3 = author1.books.create!(hardcover:false, pages:200, name:"Dune Messiah", genre:"Fiction")
+
+   expect(author1.count_books).to eq(2)
+   expect(author2.count_books).to eq(1)
+ end
+
 end
