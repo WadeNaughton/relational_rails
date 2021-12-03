@@ -11,4 +11,8 @@ describe 'the library show page' do
     expect(page).to have_content(@library1.max_capacity)
     expect(page).to have_content(@library1.id)
   end
-end 
+
+  it 'I see a count of the number of children associated with this parent' do
+    expect(page).to have_content("number of guests: #{@library1.count_guests}")
+  end
+end

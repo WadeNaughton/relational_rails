@@ -9,4 +9,8 @@ class Library < ApplicationRecord
   def self.order_by
     Library.order(created_at: :desc)
   end
+
+  def count_guests
+    Guest.where(library_id: self.id).count 
+  end
 end
