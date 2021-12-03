@@ -1,6 +1,8 @@
 <h2><a href="/guests">Guests</a></h2>
+<h2><a href="/libraries">Libraries</a></h2>
 <h1><%= @library.name %></h1>
 <p>number of guests: <%=@library.count_guests%></p>
 <p>city: <%= @library.city %></p>
 <p>maximum capacity: <%= @library.max_capacity %></p>
 <p>library id: <%= @library.id %></p>
+<h2><a href='/libraries/<%= @library.id %>/guests'>Guests of this library</a></h2>
