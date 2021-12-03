@@ -13,5 +13,17 @@ describe 'Guests index page' do
       expect(page).to have_content(@guest1.name)
       expect(page).to have_content(@guest2.name)
     end
+
+    it 'I see a link at the top of the page that takes me to the Child Index' do
+      expect(page).to have_link('Guest', href: "/guests")
+      click_link "Guests"
+      expect(page).to have_content(@guest1.name)
+    end
+
+    it 'I see a link at the top of the page that takes me to the Parent Index' do
+      expect(page).to have_link('Libraries', href: "/libraries")
+      click_link "Libraries"
+      expect(page).to have_content(@library1.name)
+    end
   end
 end
