@@ -1,4 +1,9 @@
+<h2><a href="/books">Books</a></h2>
+<h2><a href="/authors">Authors</a></h2>
+
 <p><%= @author.name %></p>
 <p><%= @author.award_winning %></p>
 <p><%= @author.age %></p>
 <p>Number of books: <%= @author.count_books %>
+
+<h2><a href='/authors/<%= @author.id %>/books'>test</a></h2>

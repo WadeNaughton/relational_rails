@@ -9,5 +9,11 @@ describe 'the author show page' do
   it 'I see the child with that id including the childs attributes' do
     expect(page).to have_content(@book.name)
 
-    end
+  end
+
+  it 'I see a link at the top of the page that takes me to the Child Index' do
+    expect(page).to have_link('Book', href: "/books")
+    click_link "Book"
+    expect(page).to have_content(@book.name)
+  end
 end

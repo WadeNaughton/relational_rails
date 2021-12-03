@@ -3,6 +3,7 @@ describe 'Libraries index page' do
   before do
     @library1 = Library.create!(name:"Denver Public Library", city: "Denver", open:true, max_capacity:500)
     @library2 = Library.create!(name:"Fort Collins Public Library", city: "Fort Collins", open:true, max_capacity:323)
+    
     visit '/libraries/'
   end
 
@@ -12,4 +13,6 @@ describe 'Libraries index page' do
       expect(page).to have_content(@library2.name)
     end
   end
+
+
 end
