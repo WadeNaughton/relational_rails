@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'Authors index page' do
   before do
-    @author1 = Author.create(award_winning:true, age:35, name:"Frank Herbert")
-    @author2 = Author.create(award_winning:false, age:30, name:"Wade Naughton")
+    @author1 = Author.create!(award_winning:true, age:35, name:"Frank Herbert")
+    @author2 = Author.create!(award_winning:false, age:30, name:"Wade Naughton")
     visit '/authors'
   end
 
@@ -14,4 +14,9 @@ describe 'Authors index page' do
 
     end
   end
+
+    it "authors ordered by most recently created" do
+      expect(@author2.name).to appear_before(@author1.name)
+
+    end
 end

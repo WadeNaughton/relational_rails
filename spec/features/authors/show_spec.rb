@@ -11,4 +11,9 @@ describe 'the author show page' do
     expect(page).to have_content(@author.award_winning)
 
   end
+
+  it "I see a count of the number of children associated with this parent" do
+    expect(page).to have_content("Number of books: #{@author.count_books}")
+
   end
+end
