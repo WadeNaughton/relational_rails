@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/authors/:id', to: 'authors#show'
   get '/libraries/new', to: 'libraries#new'
   post '/libraries', to: 'libraries#create'
+  get '/guests/new', to: 'guests#new'
+  post '/guests', to: 'guests#create'
   get '/libraries/:id', to: 'libraries#show'
   get '/guests/:id', to: 'guests#show'
   get 'libraries/:library_id/guests', to: 'library_guests#index'

@@ -13,6 +13,9 @@ describe 'The Library Creation' do
     visit '/libraries/new'
 
     fill_in('Name', with: 'Denver Public Library')
+    fill_in('City', with: 'Denver')
+    fill_in('Open', with: 'true')
+    fill_in('Max capacity', with: '223')
     click_button("Create Library")
 
 
