@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    author = Author.create(authors_params)
+    author = Author.create!(authors_params)
 
     author.save
 

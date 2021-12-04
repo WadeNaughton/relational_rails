@@ -12,6 +12,8 @@ RSpec.describe 'the artist creation' do
     visit '/authors/new'
 
     fill_in('Name', with: 'Dan Brown')
+    fill_in('award_winning', with: 'false')
+    fill_in('age', with: '50')
     click_button('Create Author')
     expect(current_path).to eq("/authors")
     expect(page).to have_content("Dan Brown")

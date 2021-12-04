@@ -5,6 +5,7 @@ RSpec.describe ' Authors books index' do
     @frank = Author.create!(award_winning:true, age:35, name:"Frank Herbert")
     @dune = @frank.books.create!(hardcover:false, pages:300, name:"Dune", genre:"Science Fiction")
     @dune_messiah = @frank.books.create!(hardcover:false, pages:400, name:"Dune Messiah", genre:"Science Fiction")
+    visit "/authors/#{@frank.id}/books"
   end
   it "shows all of the books for an author" do
 
@@ -22,8 +23,8 @@ RSpec.describe ' Authors books index' do
 
   it 'I see a link at the top of the page that takes me to the Child Index' do
 
-    expect(page).to have_link('Book', href: "/books")
-    click_link "Book"
+    expect(page).to have_link("Books", href: '/books')
+    click_link "Books"
     expect(page).to have_content(@dune_messiah.name)
   end
 end
