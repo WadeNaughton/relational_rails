@@ -1,6 +1,7 @@
 <h2><a href="/guests">Guests</a></h2>
 <h2><a href="/libraries">Libraries</a></h2>
 <h1>Guests</h1>
+<%= link_to "New Guest", "/guests/new" %>
 <% @guests.each do |guest| %>
   <h3><%=guest.name%></h3>
   <p>age: <%=guest.age%></p>

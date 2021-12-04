@@ -20,10 +20,10 @@ describe 'Guests index page' do
     click_link "Guests"
     expect(page).to have_content(@guest1.name)
   end
-  
+
   it 'I see a link at the top of the page that takes me to the Parent Index' do
     expect(page).to have_link('Libraries', href: "/libraries")
-    click_link "Libraries"
+    click_link "Libraries" 
     expect(page).to have_content(@library1.name)
   end
 end

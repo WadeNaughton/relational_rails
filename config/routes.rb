@@ -24,6 +24,12 @@ Rails.application.routes.draw do
   get '/libraries', to: 'libraries#index'
   get '/guests', to: 'guests#index'
 
+  get '/authors/:id', to: 'authors#show'
+  get '/libraries/new', to: 'libraries#new'
+  post '/libraries', to: 'libraries#create'
+  get '/guests/new', to: 'guests#new'
+  post '/guests', to: 'guests#create'
+
   get '/libraries/:id', to: 'libraries#show'
   get '/authors/:author_id/books', to: 'author_books#index'
 
