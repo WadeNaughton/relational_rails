@@ -9,10 +9,15 @@ Rails.application.routes.draw do
 
 
 
+
   #books
   get '/books', to: 'books#index'
   post '/books', to: 'books#create'
   get '/books/new', to:'books#new'
+  get '/guests/:id', to: 'guests#show'
+  get 'libraries/:library_id/guests', to: 'library_guests#index'
+
+  
   get '/books/:id', to: 'books#show'
 
 
@@ -21,5 +26,6 @@ Rails.application.routes.draw do
 
   get '/libraries/:id', to: 'libraries#show'
   get '/authors/:author_id/books', to: 'author_books#index'
+
 
 end
