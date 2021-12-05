@@ -10,6 +10,12 @@ describe 'The Guest edit' do
     expect(current_path).to eq("/guests/#{@guest1.id}/edit")
   end
 
+  it 'links to the edit page from the show page' do
+    visit "/guests/#{@guest1.id}"
+    click_button "Edit #{@guest1.name}"
+    expect(current_path).to eq("/guests/#{@guest1.id}/edit")
+  end
+
   it 'can edit the Guest' do
     visit "/guests"
     expect(page).to have_content('Charles')
@@ -19,7 +25,7 @@ describe 'The Guest edit' do
     fill_in 'new', with: 'true'
     fill_in 'Library', with: "#{@library1.id}"
     click_button 'Update Guest'
-    expect(current_path).to eq('/guests')
+    expect(current_path).to eq("/guests/#{@guest1.id}")
     expect(page).to have_content('Jess')
   end
 end
