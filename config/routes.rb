@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   post '/guests', to: 'guests#create'
   get '/authors/:author_id/books', to: 'author_books#index'
   get '/guests/:id', to: 'guests#show'
-
+  post '/guests/:id/edit', to: 'guests#edit'
+  patch '/guests/:id', to: 'guests#update'
 end

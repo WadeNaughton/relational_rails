@@ -20,4 +20,14 @@ class GuestsController < ApplicationController
   def guest_params
     params.permit(:name, :age, :new, :library_id)
   end
+
+  def edit
+    @guest = Guest.find(params[:id])
+  end
+
+  def update
+    guest = Guest.find(params[:id])
+    guest.update(guest_params)
+    redirect_to '/guests'
+  end
 end
