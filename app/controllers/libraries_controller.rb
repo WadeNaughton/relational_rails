@@ -19,4 +19,14 @@ class LibrariesController < ApplicationController
   def library_params
     params.permit(:name, :city, :open, :max_capacity)
   end
+
+  def edit
+    @library = Library.find(params[:id])
+  end
+
+  def update
+    library = Library.find(params[:id])
+    library.update(library_params)
+    redirect_to '/libraries'
+  end
 end

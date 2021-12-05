@@ -7,31 +7,27 @@ Rails.application.routes.draw do
   get '/authors/new', to:'authors#new'
   get '/authors/:id', to: 'authors#show'
 
-
-
-
   #books
   get '/books', to: 'books#index'
   post '/books', to: 'books#create'
   get '/books/new', to:'books#new'
-  get '/guests/:id', to: 'guests#show'
-  get 'libraries/:library_id/guests', to: 'library_guests#index'
-
-  
   get '/books/:id', to: 'books#show'
 
-
+  #libraries
   get '/libraries', to: 'libraries#index'
-  get '/guests', to: 'guests#index'
-
-  get '/authors/:id', to: 'authors#show'
   get '/libraries/new', to: 'libraries#new'
   post '/libraries', to: 'libraries#create'
+  get 'libraries/:library_id/guests', to: 'library_guests#index'
+  get '/libraries/:id', to: 'libraries#show'
+  post '/libraries/:id/edit', to: 'libraries#edit'
+  patch '/libraries/:id', to: 'libraries#update'
+
+  #guests
+  get '/guests', to: 'guests#index'
   get '/guests/new', to: 'guests#new'
   post '/guests', to: 'guests#create'
-
-  get '/libraries/:id', to: 'libraries#show'
   get '/authors/:author_id/books', to: 'author_books#index'
-
-
+  get '/guests/:id', to: 'guests#show'
+  post '/guests/:id/edit', to: 'guests#edit'
+  patch '/guests/:id', to: 'guests#update'
 end

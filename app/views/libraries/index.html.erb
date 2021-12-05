@@ -3,6 +3,6 @@
 <h1>Libraries</h1>
 <%= link_to "New Library", "/libraries/new" %>
 <% @libraries.order_by.each do |library| %>
-  <p><h3><%= library.name %></h3></p>
+  <p><h3><%= library.name %> <%= button_to "Edit #{library.name}", "/libraries/#{library.id}/edit", method: :post %></h3></p>
   <p>Created at: <%=library.created_at%></p>
 <% end %>

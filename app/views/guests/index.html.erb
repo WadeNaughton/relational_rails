@@ -7,4 +7,5 @@
   <p>age: <%=guest.age%></p>
   <p>new member: <%=guest.new%></p>
   <p>member of library: <%=guest.library_id%></p>
+  <p><h3><%= button_to "Edit #{guest.name}", "/guests/#{guest.id}/edit", method: :post %></h3></p>
 <% end %>
