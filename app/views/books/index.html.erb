@@ -4,7 +4,9 @@
 <h1>Books<h1/>
 
 <% @books.each do |book| %>
-  <p><h2><%= book.name %></h2></p>
+  <p><h2><%= book.name %></h2>
+    <%= link_to "Edit #{book.name}", "/books/#{book.id}/edit" %>
+  </p>
   <p><h4><%= book.author_id %></h4></p>
   <p><h4><%= book.hardcover %></h4></p>
   <p><h4>This book has <%= book.pages %> pages </h4></p>

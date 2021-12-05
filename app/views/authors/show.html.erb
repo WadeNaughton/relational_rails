@@ -6,4 +6,6 @@
 <p><%= @author.age %></p>
 <p>Number of books: <%= @author.count_books %>
 
-<h2><a href='/authors/<%= @author.id %>/books'>test</a></h2>
+<h2><a href='/authors/<%= @author.id %>/books'><%= @author.name %> books</a></h2>
+
+<%= link_to "New Book", "/books/new" %>
