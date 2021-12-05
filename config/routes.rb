@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   get '/books/:id', to: 'books#show'
 
   #libraries
-  get 'libraries/:library_id/guests', to: 'library_guests#index'
   get '/libraries', to: 'libraries#index'
   get '/libraries/new', to: 'libraries#new'
   post '/libraries', to: 'libraries#create'
+  get 'libraries/:library_id/guests', to: 'library_guests#index'
   get '/libraries/:id', to: 'libraries#show'
+  post '/libraries/:id/edit', to: 'libraries#edit'
+  patch '/libraries/:id', to: 'libraries#update'
 
   #guests
   get '/guests', to: 'guests#index'
