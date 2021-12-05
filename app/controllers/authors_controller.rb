@@ -13,12 +13,21 @@ class AuthorsController < ApplicationController
 
   def create
     author = Author.create!(authors_params)
-
     author.save
-
-    redirect_to "/authors"
+    redirect_to '/authors'
   end
 
+  def edit
+    @author = Author.find(params[:id])
+  end
+
+  def update
+    author = Author.find(params[:id])
+    author.update(authors_params)
+    redirect_to '/authors'
+  end
+
+private
   def authors_params
     params.permit(:name, :age, :award_winning)
   end

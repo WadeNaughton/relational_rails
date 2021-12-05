@@ -4,3 +4,8 @@
 @library2 = Library.create!(name:"Fort Collins Public Library", city: "Fort Collins", open:true, max_capacity:323)
 @guest1 = Guest.create!(name:"Charles", age:12, new:true, library_id:@library1.id)
 @guest2 = Guest.create!(name:"Chelsea", age:23, new:true, library_id:@library2.id)
+
+# @author1 = Author.create!(award_winning:true, age:35, name:"Frank Herbert")
+# @author2 = Author.create!(award_winning:false, age:30, name:"Wade Naughton")
+# @book1 = Book.create!(hardcover:false, pages:300, name:"Dune", genre:"Science Fiction", author_id: @author1.id)
+# @book2 = Book.create!(hardcover:false, pages:500, name:"Dune Messiah", genre:"Science Fiction", author_id: @author1.id)

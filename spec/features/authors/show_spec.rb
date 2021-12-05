@@ -20,7 +20,17 @@ describe 'the author show page' do
 
   it 'I see a link at the top of the page that takes me to the Child Index' do
     expect(page).to have_link('Book', href: "/books")
-    click_link "Book"
+    click_link "New Book"
+    fill_in('Name', with: 'Children of Dune')
+    fill_in('Pages', with: '45000')
+    fill_in('Genre', with: 'Science Fiction')
+    fill_in('Hardcover', with: 'false')
+    fill_in('Author', with: "#{@author.id}")
+    click_button "Create Book"
     expect(page).to have_content(@book1.name)
+    expect(page).to have_content(@book1.pages)
+    expect(page).to have_content(@book1.genre)
+    expect(page).to have_content(@book1.hardcover)
+    expect(page).to have_content(@author.id)
   end
 end

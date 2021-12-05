@@ -5,4 +5,6 @@
 <p><%= book.hardcover %></p>
 <p><%= book.pages %></p>
 <p><%= book.genre %></p>
+
+<%= link_to "Edit #{book.name}", "/books/#{book.id}/edit" %>
 <% end %>
