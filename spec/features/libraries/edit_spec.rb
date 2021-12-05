@@ -18,7 +18,6 @@ describe 'The Library edit' do
     fill_in 'open', with: 'true'
     fill_in 'max_capacity', with: '99'
     click_button 'Update Library'
-    save_and_open_page
     expect(current_path).to eq('/libraries')
     expect(page).to have_content('Pueblo Public Library')
   end
