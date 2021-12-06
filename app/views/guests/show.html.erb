@@ -5,3 +5,4 @@
 <p>library id: <%= @guest.library_id %></p>
 <p>guest id: <%= @guest.id %></p>
 <p><h3><%= button_to "Edit #{@guest.name}", "/guests/#{@guest.id}/edit", method: :post %></h3></p>
+<p><h3><%= button_to "Delete #{@guest.name}", "/guests/#{@guest.id}", method: :delete %></h3></p>

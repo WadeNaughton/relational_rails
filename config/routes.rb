@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/libraries/:id', to: 'libraries#show'
   post '/libraries/:id/edit', to: 'libraries#edit'
   patch '/libraries/:id', to: 'libraries#update'
+  delete '/libraries/:id', to: 'libraries#destroy'
 
   #guests
   get '/guests', to: 'guests#index'
@@ -36,4 +37,5 @@ Rails.application.routes.draw do
   get '/guests/:id', to: 'guests#show'
   post '/guests/:id/edit', to: 'guests#edit'
   patch '/guests/:id', to: 'guests#update'
+  delete '/guests/:id', to: 'guests#destroy'
 end

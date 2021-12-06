@@ -1,5 +1,5 @@
 class Library < ApplicationRecord
-  has_many :guests
+  has_many :guests, :dependent => :destroy
 
   validates_presence_of :name
   validates_presence_of :city
