@@ -11,6 +11,6 @@ class Library < ApplicationRecord
   end
 
   def count_guests
-    Guest.where(library_id: self.id).count 
+    Guest.where(library_id: self.id).count
   end
 end
