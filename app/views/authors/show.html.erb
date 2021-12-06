@@ -8,4 +8,6 @@
 
 <h2><a href='/authors/<%= @author.id %>/books'><%= @author.name %> books</a></h2>
 
+<%= link_to "Edit #{@author.name}", "/authors/#{@author.id}/edit" %>
+
 <%= link_to "New Book", "/books/new" %>

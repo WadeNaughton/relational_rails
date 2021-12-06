@@ -3,7 +3,7 @@ describe 'the author show page' do
 
   before do
     @author = Author.create!(award_winning:true, age:35, name:"Frank Herbert")
-    @book1 = Book.create!(hardcover:false, pages:300, name:"Dune", genre:"Science Fiction", author_id: @author.id)
+    @book1 = Book.create!(hardcover:true, pages:300, name:"Dune", genre:"Science Fiction", author_id: @author.id)
     visit "/authors/#{@author.id}"
   end
   it 'I see the parent with that id including the parents attributes' do

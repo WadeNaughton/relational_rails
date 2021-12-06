@@ -1,10 +1,11 @@
 <h2><%= link_to "Books", "/books" %></h2>
 <h2><%= link_to "Authors", "/authors" %></h2>
+<%= link_to "Alphabetical Order", "/authors/#{@author.id}/books?sort=asc" %>
 <% @books.each do |book| %>
-<p><%= book.name %></p>
-<p><%= book.hardcover %></p>
-<p><%= book.pages %></p>
-<p><%= book.genre %></p>
+  <p><%= book.name %></p>
+  <p><%= book.hardcover %></p>
+  <p><%= book.pages %></p>
+  <p><%= book.genre %></p>
 
 <%= link_to "Edit #{book.name}", "/books/#{book.id}/edit" %>
 <% end %>
