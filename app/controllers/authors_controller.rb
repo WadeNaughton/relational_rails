@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
 
+
   def index
     @authors = Author.all
   end
@@ -25,6 +26,12 @@ class AuthorsController < ApplicationController
     author = Author.find(params[:id])
     author.update(authors_params)
     redirect_to "/authors/#{author.id}"
+  end
+
+  def destroy
+    author = Author.find(params[:id])
+    author.destroy
+    redirect_to '/authors'
   end
 
 private

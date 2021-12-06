@@ -8,4 +8,5 @@
   <p><%= book.genre %></p>
 
 <%= link_to "Edit #{book.name}", "/books/#{book.id}/edit" %>
+<%= button_to "Delete", "/books/#{book.id}", method: :delete %>
 <% end %>

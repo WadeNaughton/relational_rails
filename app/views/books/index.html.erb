@@ -6,6 +6,7 @@
 <% @books.true_book.each do |book| %>
   <p><h2><%= book.name %></h2>
     <%= link_to "Edit #{book.name}", "/books/#{book.id}/edit" %>
+    <%= button_to "Delete", "/books/#{book.id}", method: :delete %>
   </p>
   <p><h4><%= book.author_id %></h4></p>
   <p><h4><%= book.hardcover %></h4></p>
