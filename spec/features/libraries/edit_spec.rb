@@ -9,6 +9,12 @@ describe 'The Library edit' do
     expect(current_path).to eq("/libraries/#{@library1.id}/edit")
   end
 
+  it 'links to the edit page from the show page' do
+    visit "/libraries/#{@library1.id}"
+    click_button "Edit #{@library1.name}"
+    expect(current_path).to eq("/libraries/#{@library1.id}/edit")
+  end
+
   it 'can edit the Library' do
     visit "/libraries"
     expect(page).to have_content('Denver Public Library')
@@ -18,7 +24,7 @@ describe 'The Library edit' do
     fill_in 'open', with: 'true'
     fill_in 'max_capacity', with: '99'
     click_button 'Update Library'
-    expect(current_path).to eq('/libraries')
+    expect(current_path).to eq("/libraries/#{@library1.id}")
     expect(page).to have_content('Pueblo Public Library')
   end
 end

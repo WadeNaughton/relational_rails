@@ -11,6 +11,10 @@ class Library < ApplicationRecord
   end
 
   def count_guests
-    Guest.where(library_id: self.id).count 
+    Guest.where(library_id: self.id).count
+  end
+
+  def self.alphabetical
+    Guest.order(:name)
   end
 end
