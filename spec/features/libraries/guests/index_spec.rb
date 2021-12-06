@@ -32,4 +32,5 @@ describe 'Guests index page' do
     click_link "Sort Guests"
     expect(@guest2.name).to appear_before(@guest1.name)
   end
+
 end
