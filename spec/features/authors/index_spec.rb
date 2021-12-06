@@ -4,7 +4,7 @@ describe 'Authors index page' do
   before do
     @author1 = Author.create!(award_winning:true, age:35, name:"Frank Herbert")
     @author2 = Author.create!(award_winning:false, age:30, name:"Wade Naughton")
-    @book1 = Book.create!(hardcover:false, pages:300, name:"Dune", genre:"Science Fiction", author_id: @author1.id)
+    @book1 = Book.create!(hardcover:true, pages:300, name:"Dune", genre:"Science Fiction", author_id: @author1.id)
     visit '/authors'
   end
 

@@ -2,8 +2,6 @@ class Author < ApplicationRecord
 
   has_many :books
 
-  # validates_presence_of :name
-  # validates_presence_of :age
   validates :name, presence: true
   validates :age, presence: true
   validates :award_winning, inclusion: [true, false]
@@ -16,5 +14,9 @@ class Author < ApplicationRecord
 
   def count_books
     Book.where(author_id: self.id).count
+  end
+
+  def self.alphabetical
+    Book.order(:name)
   end
 end

@@ -16,7 +16,7 @@ RSpec.describe 'the book creation' do
 
     fill_in('Name', with: 'Da Vinci Code')
     fill_in('Genre', with: 'fiction')
-    fill_in('Hardcover', with: 'false')
+    fill_in('Hardcover', with: 'true')
     fill_in('Pages', with: '500')
     fill_in('Author', with: "#{@author1.id}")
     click_button('Create Book')

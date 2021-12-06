@@ -5,3 +5,4 @@
 <p><%= @books.genre %></p>
 <p><%= @books.pages %></p>
 <p><%= @books.author_id %></p>
+<%= link_to "Edit #{@books.name}", "/books/#{@books.id}/edit" %>
