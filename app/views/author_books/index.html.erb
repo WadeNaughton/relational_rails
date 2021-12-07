@@ -8,5 +8,12 @@
   <p><%= book.genre %></p>
 
 <%= link_to "Edit #{book.name}", "/books/#{book.id}/edit" %>
+
 <%= button_to "Delete", "/books/#{book.id}", method: :delete %>
+<% end %>
+
+<%= form_with url: "/authors/#{@author.id}/books", method: :get, local: true do |form| %>
+  <%= form.label :pages, "Books Longer Than" %>
+  <%= form.text_field :pages %>
+  <%= form.submit "Apply" %>
 <% end %>

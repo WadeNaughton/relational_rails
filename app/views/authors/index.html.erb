@@ -3,7 +3,7 @@
 
 <h1>Authors</h1>
 
-<% @authors.order_by.each do |author| %>
+<% @authors.each do |author| %>
   <p>
     <%= author.name %>
     <%= link_to "Edit #{author.name}", "/authors/#{author.id}/edit" %>
