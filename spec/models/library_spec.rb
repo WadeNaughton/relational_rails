@@ -31,4 +31,7 @@ describe Library do
     expect(@library2.alphabetical).to eq([@guest3, @guest2])
   end
 
+  it '#age_filter' do
+    expect(@library2.age_filter(24)).to eq([@guest3])
+  end
 end
