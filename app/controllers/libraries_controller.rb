@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
   def index
-    @libraries = Library.all
+    @libraries = Library.all.order_by
   end
 
   def new
@@ -14,6 +14,7 @@ class LibrariesController < ApplicationController
 
   def show
     @library = Library.find(params[:id])
+    @library.count_guests
   end
 
   def library_params
@@ -32,7 +33,7 @@ class LibrariesController < ApplicationController
 
   def destroy
     library = Library.find(params[:id])
-    library.destroy 
+    library.destroy
     redirect_to '/libraries'
   end
 end

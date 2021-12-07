@@ -11,10 +11,14 @@ class Library < ApplicationRecord
   end
 
   def count_guests
-    Guest.where(library_id: self.id).count
+    guests.where(library_id: self.id).count
   end
 
-  def self.alphabetical
-    Guest.order(:name)
+  def alphabetical
+    guests.order(:name)
+  end
+
+  def age_filter(age)
+    guests.where("age > ?", age)
   end
 end
