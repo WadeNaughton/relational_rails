@@ -11,4 +11,6 @@ class Book < ApplicationRecord
     Book.where(hardcover: true)
   end
 
+  
+
 end
