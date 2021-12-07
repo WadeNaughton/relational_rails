@@ -1,9 +1,10 @@
 class LibraryGuestsController < ApplicationController
   def index
     @library = Library.find(params[:library_id])
-    # @guests = library.guests
     if params[:sort]
-      @guests = Library.alphabetical
+      @guests = @library.alphabetical
+    elsif params[:age]
+      @guests = @library.age_filter(params[:age])
     else
       @guests = @library.guests
     end

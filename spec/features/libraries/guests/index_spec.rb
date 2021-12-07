@@ -33,4 +33,10 @@ describe 'Guests index page' do
     expect(@guest2.name).to appear_before(@guest1.name)
   end
 
+  it 'I see a form that takes a numerical input and limits guests greater than the input' do
+    fill_in "Guests Older Than", with:12
+    click_button "Apply"
+    expect(page).to_not have_content(@guest1.name)
+  end
+
 end

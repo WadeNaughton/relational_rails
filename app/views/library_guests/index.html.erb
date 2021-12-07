@@ -9,3 +9,8 @@
   <p><h3> <%= button_to "Edit #{guest.name}", "/guests/#{guest.id}/edit", method: :post %></h3></p>
   <p><h3><%= button_to "Delete #{guest.name}", "/guests/#{guest.id}", method: :delete %></h3></p>
 <% end %>
+<%= form_with url: "/libraries/#{@library.id}/guests", method: :get, local: true do |form| %>
+  <%= form.label :age, "Guests Older Than" %>
+  <%= form.text_field :age  %>
+  <%= form.submit "Apply" %>
+  <% end %>
