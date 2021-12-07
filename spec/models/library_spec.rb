@@ -28,7 +28,7 @@ describe Library do
   end
 
   it '#alphabetical' do
-    expect(Library.alphabetical).to eq([@guest3, @guest2, @guest1])
+    expect(@library2.alphabetical).to eq([@guest3, @guest2])
   end
 
 end
